@@ -11,6 +11,9 @@ export class SourceService {
   public getSources(): Source[] {
     const url = `https://newsapi.org/v2/sources?apiKey=e25f68463ae0441a947aadda3a0fa55c&language=en&category=technology`;
     const result: Source[] = [];
+    const myApi = new Source();
+    myApi.id = 'myApi';
+    myApi.name = 'My Api';
     this.httpClient.get(url).subscribe((data: any) => {
       Object.values(data.sources).forEach(element => {
         const source = new Source();
@@ -19,15 +22,7 @@ export class SourceService {
         result.push(source);
       });
     });
+    result.push(myApi);
     return result;
-    // this.spinnerService.show();
-    // return <Observable<Character[]>>this.http
-    //   .get(charactersUrl)
-    //   .map(res => {
-    //     const x = this.extractData<Character[]>(res);
-    //     return this.extractData<Character[]>(res);
-    //   })
-    //   .catch(this.exceptionService.catchBadResponse)
-    //   .finally(() => this.spinnerService.hide());
   }
 }

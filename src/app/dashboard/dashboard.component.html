@@ -5,7 +5,7 @@
       <option *ngFor="let source of sources" [ngValue]="source">{{source.name}}</option>
     </select>
     <input type="text">
-    <input type="checkbox">
+    <input type="checkbox" ng-model="checked" ng-init="checked=true">
     <label>Only created by me</label>
     <button>Filter</button>
     <button (click)="onAddArticleClick()">Add article</button>
