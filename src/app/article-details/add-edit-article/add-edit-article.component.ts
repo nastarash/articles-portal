@@ -13,10 +13,10 @@ export class AddEditArticleComponent {
 
   public postArticle() {
     const url = 'http://localhost:3000/news';
-    const body = { title: document.getElementById('title').value,
+    const body = { title: (document.getElementById('title') as HTMLTextAreaElement).value,
     author: 'User User',
-    content: document.getElementById('content').value,
-    urlToImage: document.getElementById('imageUrl').value,
+    content: (document.getElementById('content') as HTMLTextAreaElement).value,
+    urlToImage: (document.getElementById('imageUrl') as HTMLTextAreaElement).value,
     publishedAt: new Date()
    };
     return this.httpClient.post(url, body).subscribe();
