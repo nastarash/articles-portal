@@ -11,7 +11,7 @@ export class ArticleService {
     if (sourceId !== 'myApi') {
       const url = `https://newsapi.org/v2/top-headlines?sources=${sourceId}&apiKey=e25f68463ae0441a947aadda3a0fa55c`;
       const result: Article[] = [];
-      this.httpClient.get(url).subscribe((data: []) => {
+      this.httpClient.get(url).subscribe((data: any) => {
         Object.values(data.articles).forEach(element => {
           const article = new Article();
           article.author = element.author || '';
@@ -28,7 +28,7 @@ export class ArticleService {
     } else {
       const url = `http://localhost:3000/news`;
       const result: Article[] = [];
-      this.httpClient.get(url).subscribe((data: []) => {
+      this.httpClient.get(url).subscribe((data: any) => {
         data.forEach(element => {
           const article = new Article();
           article.author = element.author || '';
