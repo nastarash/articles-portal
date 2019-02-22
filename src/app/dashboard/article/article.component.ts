@@ -27,4 +27,9 @@ export class ArticleComponent implements OnInit {
     this.articleSelected.emit(this.article)
     this.router.navigate(['article-details/edit']);
   }
+
+  public onDeleteArticleClick() {
+    this.articleSelected.emit(this.article)
+    this.router.navigate(['article-details/delete']);
+  }
 }

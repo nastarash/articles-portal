@@ -10,10 +10,10 @@
   <p>Author: </p>
   <input type="text" id="author" value="{{article.author}}">
   <p>Article URL: </p>
-  <input type="text" id="author" value="{{article.url}}">
+  <input type="text" id="url" value="{{article.url}}">
   <p>Published at: </p>
   <input type ="text" id="publishedAt" value="{{article.publishedAt}}">
   <p>Content: </p>
   <input type ="text" id="content" value="{{article.content}}">
-  <button (click) ="editArticle()">Edit</button>
+  <button (click) ="editArticle(article)">Edit</button>
 </div>

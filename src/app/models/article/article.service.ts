@@ -14,6 +14,7 @@ export class ArticleService {
       this.httpClient.get(url).subscribe((data: any) => {
         Object.values(data.articles).forEach(element => {
           const article = new Article();
+          article.id = element._id || 'none';
           article.author = element.author || '';
           article.title = element.title || '';
           article.description = element.description || '';
@@ -31,6 +32,7 @@ export class ArticleService {
       this.httpClient.get(url).subscribe((data: any) => {
         data.forEach(element => {
           const article = new Article();
+          article.id = element._id || 'none';
           article.author = element.author || '';
           article.title = element.title || '';
           article.description = element.description || '';

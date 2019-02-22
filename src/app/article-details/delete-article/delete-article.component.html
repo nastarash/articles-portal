@@ -1,0 +1,19 @@
+<div class="card">
+  <p>User:</p>
+  <input type="text" id="username">
+  <p>Password: </p>
+  <input type="text" id="password">
+  <div class="card">
+    <img class="img" src="{{article.urlToImage}}" alt="No image to show">
+    <div class="card-body">
+      <div class="card-title">
+        <h5 class="card-title">{{article.title}}</h5>
+        <h6 class="card-title">{{article.author}}</h6>
+        <a href="{{article.url}}" class="article-link">{{article.url}}</a>
+      </div>
+      <p class="card-text">{{article.publishedAt}}</p>
+      <p class="card-text">{{article.content}}</p>
+    </div>
+  </div>
+  <button (click)="deleteArticle()">Delete</button>
+</div>
